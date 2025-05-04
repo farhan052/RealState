@@ -37,7 +37,7 @@ const MapContainer = dynamic(() => import("@/@components/MapContainer"), {
 
 
 export default async function Page({ params }: {params: { project: string }}) {
-  const city = params.project.trim();
+  const city = await params.project.trim();
   const API_BASE_URL = process.env.API_BASE_URL || "http://192.168.56.1:3000";
 
   try {
