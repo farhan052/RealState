@@ -20,9 +20,10 @@ export async function generateMetadata({
   }: {
     params: { project: string };
   }): Promise<Metadata> {
+    const city =  await params?.project.trim();
     return {
-      title: `${params.project} Projects | YourSiteName`,
-      description: `Real estate projects in ${params.project}`,
+      title: `${city} Projects | YourSiteName`,
+      description: `Real estate projects in ${city}`,
     };
   }
   
