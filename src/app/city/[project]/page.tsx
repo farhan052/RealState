@@ -1,3 +1,4 @@
+import { CityPageProps } from "@/types/city";
 import dynamic from "next/dynamic";
 
 // Define types for your API responses
@@ -18,13 +19,9 @@ const MapContainer = dynamic(() => import("@/@components/MapContainer"), {
 //   ssr: false, // if the map component uses window object
 });
 
-type PageProps = {
-  params: {
-    project: string;
-  };
-};
 
-export default async function Page({ params }: PageProps) {
+
+export default async function Page({ params }: CityPageProps) {
   const city = params.project.trim();
   const API_BASE_URL = process.env.API_BASE_URL || "http://192.168.56.1:3000";
 
