@@ -39,7 +39,7 @@ export default function RootLayout({
         className={`${geistSans} w-screen overflow-x-hidden font-normal font-Poppins  antialiased`}
       >
 
-          <header   className="z-50  absolute w-screen bg-[#0000004a]">
+          {/* <header   className="z-50  absolute w-screen bg-[#0000004a]">
             <div className="container mx-auto">
               <ul className="text-md lg:grid py-4  grid-cols-7 hidden opacity-100 text-white items-center justify-evenly">
                 <li>
@@ -68,25 +68,21 @@ export default function RootLayout({
                 </li>
               </ul>
               <ul className="text-md lg:hidden flex px-3 lg:px-0 opacity-100 text-white container items-center justify-between">
-                {/* <li>
-                  <IoMenu  className="text-3xl"/>
-                </li> */}
+               
               <li className="text-[50px] flex items-center  max-w-24  font-mono">
               <img src="/logo.svg"  className="my-2 w-16" />
                 </li>
                 <li className="flex items-center  justify-between">
                   <div><Image  alt="menu" className="mr-4" src={'/header/Group.png'} width={20} height={20}/></div>
-                  {/* <div className=" rounded-full  !bg-[#ffffff4a] p-3">
-                   <IoSearch className="text-lg"/>
-                  </div> */}
+                
                 </li>
               </ul>
             </div>
-        </header>
+        </header> */}
       {children}
 
 
-      <footer  style={{backgroundImage:'/Footer/modern.jpg'}} className="  flex  h-full bg-[#202020] relative   z-10 border-t-[#AC8E46]   border-t-4 opacity-90   ">
+      {/* <footer  style={{backgroundImage:'/Footer/modern.jpg'}} className="  flex  h-full bg-[#202020] relative   z-10 border-t-[#AC8E46]   border-t-4 opacity-90   ">
 <img src=" /Footer/modern.jpg"  className="absolute opacity-10  w-full h-full" />
 <div className=" grid mt-12 grid-cols-5 px-2 container mx-auto text-[#E0DFDF]  text-[16px] ">
 
@@ -175,7 +171,7 @@ export default function RootLayout({
 
 
 </div>
-</footer>
+</footer> */}
       </body>
       
     </html>
