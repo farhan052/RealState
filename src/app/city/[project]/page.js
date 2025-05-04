@@ -58,7 +58,7 @@ const MapContainer = dynamic(() => import("@/@components/MapContainer"), {
     console.error("Error fetching data:", error);
     return (
       <div className="p-4 bg-red-50 border border-red-200 rounded-md">
-        <h3 className="text-red-800 font-medium">Error</h3>
+        <h3 className="text-red-800 font-medium">Error  API_BASE_URL: {API_BASE_URL}</h3>
         <p className="text-red-700">
           {error ? error.message : "Failed to load data"}
         </p>
