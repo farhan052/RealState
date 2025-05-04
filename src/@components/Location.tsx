@@ -42,6 +42,8 @@ const Location: React.FC<LocationProps> = ({ project, cordData }) => {
         if (!response.ok) {
           throw new Error('Failed to fetch geocode data');
         }
+        const date = new Date()
+        console.log(date);
 
         const data = await response.json();
 
