@@ -56,6 +56,7 @@ const Location: React.FC<LocationProps> = ({ project, cordData }) => {
           latitude: data.latitude,
           longitude: data.longitude
         }));
+        setLoading(false);
       } catch (err) {
         console.error('Geocoding error:', err);
         setError(err instanceof Error ? err.message : 'Geocoding failed');
@@ -67,9 +68,7 @@ const Location: React.FC<LocationProps> = ({ project, cordData }) => {
         //     longitude: cordData.longitude
         //   }));
         // }
-      } finally {
-        setLoading(false);
-      }
+      } 
     };
 
     // Only fetch if we don't have coordinates
