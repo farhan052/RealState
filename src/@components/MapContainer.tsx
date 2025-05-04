@@ -1,6 +1,5 @@
 'use client';
-
-import React from 'react';
+import React from 'react'
 import { MapContainer as LeafletMap, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import dynamic from 'next/dynamic';

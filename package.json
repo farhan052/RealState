@@ -10,6 +10,7 @@
     "prod": "npm run build && npm run start"
   },
   "dependencies": {
+    "@types/leaflet": "^1.9.17",
     "@vercel/kv": "^3.0.0",
     "axios": "^1.9.0",
     "cheerio": "^1.0.0",
@@ -17,7 +18,7 @@
     "leaflet": "^1.9.4",
     "leaflet-defaulticon-compatibility": "^0.1.2",
     "next": "15.3.1",
-    "react": "^19.0.0",
+    "react": "^19.1.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-leaflet": "^5.0.0",
