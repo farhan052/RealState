@@ -1,4 +1,5 @@
 import { CityPageProps } from "@/types/city";
+import { Metadata } from "next";
 import dynamic from "next/dynamic";
 
 // Define types for your API responses
@@ -13,6 +14,19 @@ type GeocodeData = {
   // ... other properties
 };
 
+// Generate metadata (optional)
+export async function generateMetadata({
+    params,
+  }: {
+    params: { project: string };
+  }): Promise<Metadata> {
+    return {
+      title: `${params.project} Projects | YourSiteName`,
+      description: `Real estate projects in ${params.project}`,
+    };
+  }
+  
+
 // Disable SSR for map components if they use window object
 const MapContainer = dynamic(() => import("@/@components/MapContainer"), {
   loading: () => <p>Loading map...</p>,
@@ -21,7 +35,7 @@ const MapContainer = dynamic(() => import("@/@components/MapContainer"), {
 
 
 
-export default async function Page({ params }: CityPageProps) {
+export default async function Page({ params }: {params: { project: string }}) {
   const city = params.project.trim();
   const API_BASE_URL = process.env.API_BASE_URL || "http://192.168.56.1:3000";
 
