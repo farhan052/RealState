@@ -13,7 +13,7 @@ const Location = ({ project, cordData }) => {
   return (
     <Marker 
       key={project.name} 
-      position={[cordData.latitude, cordData.longitude]}
+      position={[project?.latitude || cordData.latitude , project?.longitude|| cordData.longitude]}
     >
       <Popup>
         <strong>{ project.name}</strong><br />
