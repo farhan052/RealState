@@ -1,5 +1,7 @@
-;
-import MapView from "@/@components/MapContainer";
+
+const MapView = dynamic(()=>import( "@/@components/MapContainer"),{
+loading:()=> <></>
+});
 import dynamic from "next/dynamic";
 import React from "react";
 
