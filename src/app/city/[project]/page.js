@@ -43,7 +43,7 @@ const MapContainer = dynamic(() => import("@/@components/MapContainer"), {
 
     const { projects } = await projectsRes.json();
 
-    return (
+    return (<>
       <div className="grid grid-cols-1  gap-4">
         {geocodeData ? (
           <MapView projects={projects} cordData={geocodeData} />
@@ -53,16 +53,18 @@ const MapContainer = dynamic(() => import("@/@components/MapContainer"), {
           </div>
         )}
       </div>
+      </>
     );
   } catch (error) {
     console.error("Error fetching data:", error);
-    return (
+    return (<>
       <div className="p-4 bg-red-50 border border-red-200 rounded-md">
         <h3 className="text-red-800 font-medium">Error  API_BASE_URL: {API_BASE_URL}</h3>
         <p className="text-red-700">
           {error ? error.message : "Failed to load data"}
         </p>
       </div>
+   </>
     );
   }
 }
