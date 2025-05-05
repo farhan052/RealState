@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🏡 Real Estate Projects Scraper with Interactive Map
+This Next.js 14+ project scrapes real estate listings from MagicBricks and displays them on an interactive Leaflet map with project details, geocoding support, and global state management using React Context.
 
-## Getting Started
+📦 Features
+🔍 Scrape property projects by city from MagicBricks
 
-First, run the development server:
+📍 Geocode project locations using Google Maps API
 
-```bash
+🗺️ Show markers on an interactive Leaflet map via react-leaflet
+
+📸 Display project name, builder, price, image, and coordinates
+
+⚙️ Built-in API rate limiting and error handling
+
+♻️ Global state with React Context API
+
+🚀 App Router with dynamic routes (/city/[city])
+
+🧱 Tech Stack
+Next.js 14 (App Router)
+
+TypeScript
+
+React Context API
+
+Leaflet / React-Leaflet
+
+Cheerio & Axios (for web scraping)
+
+Google Maps Geocoding API
+
+Tailwind CSS (optional styling)
+
+🛠️ Setup Instructions
+1. Clone the repo
+bash
+Copy
+Edit
+git clone https://github.com/your-username/RealEstate.git
+cd real-estate
+2. Install dependencies
+bash
+Copy
+Edit
+npm install
+3. Add environment variables
+Create a .env.local file:
+
+env
+Copy
+Edit
+POSITIONSTACK_API_KEY=your_position_stack_api_key
+4. Run the development server
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Visit http://localhost:3000/project/Hyderabad
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📁 Key Files
+Path	Description
+app/api/scrape/route.ts	Scrapes projects from MagicBricks by city
+app/api/geocode/route.ts	Calls Google Maps API to get coordinates
+components/MapContainer.tsx	Interactive map with markers and popups
+context/ProjectContext.tsx	Global state for scraped projects
+app/project/[city]/page.tsx	Renders city-specific project data on map
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+📌 Sample Usage
+tsx
+Copy
+Edit
+const { projects } = useProjectContext();
+ts
+Copy
+Edit
+GET /api/scrape?city=Mumbai
+GET /api/geocode?location=Bandra%20East
+🧠 Notes
+Be mindful of API rate limits.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Caching geocode results is recommended (currently cached in-memory).
 
-## Learn More
+Ensure all client-only components (e.g., Leaflet map) use 'use client'.
 
-To learn more about Next.js, take a look at the following resources:
+📜 License
+MIT © 2025 Your Name
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
