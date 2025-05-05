@@ -49,6 +49,7 @@ Create a .env.local file:
 env
 Copy
 Edit
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3000
 POSITIONSTACK_API_KEY=your_position_stack_api_key
 4. Run the development server
 bash
