@@ -1,5 +1,5 @@
 🏡 Real Estate Projects Scraper with Interactive Map
-This Next.js 14+ project scrapes real estate listings from MagicBricks and displays them on an interactive Leaflet map with project details, geocoding support, and global state management using React Context.
+This Next.js 15+ project scrapes real estate listings from MagicBricks and displays them on an interactive Leaflet map with project details, geocoding support, and global state management using React Context.
 
 📦 Features
 🔍 Scrape property projects by city from MagicBricks
