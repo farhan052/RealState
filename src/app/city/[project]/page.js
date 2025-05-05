@@ -1,6 +1,10 @@
 
 const MapView = dynamic(()=>import( "@/@components/MapContainer"),{
-loading:()=> <></>
+loading:()=> <>
+<div className="flex items-center justify-center h-64">
+<div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+</div>
+</>,
 });
 import dynamic from "next/dynamic";
 import React from "react";
@@ -12,24 +16,33 @@ import React from "react";
 
 
 // Dynamic import for MapContainer
-const MapContainer = dynamic(() => import("@/@components/MapContainer"), {
-  loading: () => (
-    <div className="flex items-center justify-center h-64">
-      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-    </div>
-  ),
+// const MapContainer = dynamic(() => import("@/@components/MapContainer"), {
+//   loading: () => (
+//     <div className="flex items-center justify-center h-64">
+//       <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+//     </div>
+//   ),
 
-});
+// });
 
- const Page =  async (props) => {
-  const city = await props.params.project.trim();
+ async function Page (props) {
+    
+   const{project} = await props?.params;
+   
+    // if(!city){
+    //     return <>
+    //     <div className="flex items-center justify-center h-screen">
+    //     <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+    //   </div>
+    // </>
+    // }
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://192.168.56.1:3000";
 
   try {
-    const projectsRes = await fetch(`${API_BASE_URL}/api/scrap?city=${encodeURIComponent(city)}`, {
+    const projectsRes = await fetch(`${API_BASE_URL}/api/scrap?city=${project}`, {
         cache: "no-store",
       });
-    const geocodeRes = await fetch(`${API_BASE_URL}/api/geocode?location=${encodeURIComponent(city)}`, {
+    const geocodeRes = await fetch(`${API_BASE_URL}/api/geocode?location=${project}`, {
         cache: "no-store",
       });
    
