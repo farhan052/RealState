@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MapContainer as LeafletMap, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import dynamic from 'next/dynamic';
@@ -37,7 +37,7 @@ const MapView = ({ projects, cordData }) => {
  const getCordData = async (project) => {
              console.log(project.location);
              const response = await fetch(
-               `${process.env.API_BASE_URL}/api/geocode?location=${project.location.toString()}`
+               `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/geocode?location=${project.location.toString()}`
              );
              const data = await response.json();
              console.log(data);
